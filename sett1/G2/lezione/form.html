@@ -18,7 +18,7 @@
 
 		<hr />
 
-		<form>
+		<form action="action.php" method="POST">
             <!-- Gruppo anagrafica -->
 			<fieldset>
 				<legend>Anagrafica</legend>
@@ -76,6 +76,11 @@
                 <label for="pagamento">Numero rate</label>
                 <input type="number" id="pagamento" name="pagamento" min="3" max="6" value="3" /><span> (Inserire un numero di rate tra 3 e 6)</span>
             </fieldset>
+            <p></p>
+
+            <button type="submit" id="invia">Invia</button>
+            &nbsp;
+            <button type="reset" id="cancella">Cancella</button>
 		</form>
 	</body>
 </html>
