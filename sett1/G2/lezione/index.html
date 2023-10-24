@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lezione settimana 2 giorno 2</title>
+
+		<style>
+			table {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+
+			td,
+			th {
+				border: 1px solid black;
+                padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>TABELLE</h1>
+
+		<table>
+			<tbody>
+				<tr>
+					<td>Cella 1</td>
+					<td>Cella 2</td>
+					<td>Cella 3</td>
+				</tr>
+				<tr>
+					<td>Cella 1</td>
+					<td>Cella 2</td>
+					<td>Cella 3</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr />
+
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Cognome</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Mario</td>
+					<td>Rossi</td>
+					<td>mario@rossi.com</td>
+				</tr>
+				<tr>
+					<td>Aldo</td>
+					<td>Bianchi</td>
+					<td>aldo@bianchi.it</td>
+				</tr>
+				<tr>
+					<td>Anna</td>
+					<td>Verdi</td>
+					<td>anna@verdi.com</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3"><strong>utenti: 3</strong></td>
+				</tr>
+			</tfoot>
+		</table>
+
+		<hr />
+
+		<table>
+			<thead>
+				<tr>
+					<th colspan="4">TABELLA COMPLESSA</th>
+				</tr>
+			</thead>
+            <tbody>
+                <tr>
+                    <td>riga 1 cella 1</td>
+                    <td>riga 2 cella 2</td>
+                    <td>riga 3 cella 3</td>
+                    <td>riga 4 cella 4</td>
+                </tr>
+                <tr>
+                    <td>riga 2 cella 1</td>
+                    <td colspan="2">riga 2 celle 2-3</td>
+                    <td rowspan="2">riga 2-3 cella 4</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">riga 3-4 cella 1</td>
+                    <td>riga 3 cella 2</td>
+                    <td colspan="2">riga 3 cella 3-4</td>
+                </tr>
+                <tr>
+                    <td>riga 4 cella 2</td>
+                    <td>riga 4 cella 3</td>
+                    <td>riga 4 cella 4</td>
+                </tr>
+            </tbody>
+		</table>
+	</body>
+</html>
