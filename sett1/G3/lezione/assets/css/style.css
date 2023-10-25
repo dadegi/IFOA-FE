@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+html, body {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+h1 {
+    text-shadow: 4px 4px 8px #666, -4px -4px 8px #666;
+}
+
+p {
+    font-weight: lighter;
+    line-height: 1.2;
+}
+
+/* Questo è un commento */
+
+#immagine {
+    text-align: center;
+}
+
+img {
+    width: 30%;
+}
+
+.rosso {
+    color: #FF3C41;
+}
+
+.margine {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#icona {
+    font-size: 2rem;
+}
+
+/* SELETTORI COMBINATORI */
+/* Selettore di discendenti */
+#discendenti h4 {
+    text-align: right;
+}
+
+/* Selettore di figli diretti */
+#diretti > h4 {
+    text-align: right;
+}
+
+/* Selettore di fratelli adiacenti */
+#adiacenti + h5 {
+    text-decoration: underline;
+    color: green;
+}
+
+/* Selettore generale di fratelli */
+#generali ~ h5 {
+    text-decoration: underline;
+    color: green;
+}
+
+/* Pseudo-classi */
+a:hover {
+    color: red;
+}
+
+#primaRiga li:first-child {
+    color: navy;
+}
+
+#primaRiga li:last-child {
+    color: red;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 30%;
+    margin: 0 auto;
+}
+
+td {
+    border: 2px solid black
+}
+
+table tr:nth-child(n + 2) {
+    background-color: aqua;
+}
+
+#elenco li::before {
+    content: 'Studente ';
+}
+
+#elementi p:first-of-type {
+    color: red;
+}

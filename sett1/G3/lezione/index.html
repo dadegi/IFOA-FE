@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+		/>
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body>
+		<h1 class="rosso">Hello World!</h1>
+		<p class="rosso margine">
+			Questo è un paragrafo<br />
+			Questo è un altro paragrafo
+		</p>
+
+		<div class="margine" id="immagine">
+			<figure>
+				<img
+					src="assets/images/Boccioni_-_Carica_dei_Lancieri.jpg"
+					alt="immagine"
+				/>
+				<figcaption class="rosso">Immagine da Boccioni</figcaption>
+			</figure>
+		</div>
+
+		<i id="icona" class="fa-solid fa-location-dot"></i>
+		<p></p>
+		<span class="material-symbols-outlined"> settings </span><br />
+		<span class="material-symbols-outlined"> logout </span>
+
+		<hr />
+		<h2>SELETTORI COMBINATORI</h2>
+
+		<h3>Selettore di discendenti</h3>
+
+		<div id="discendenti">
+			<h4>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+				quae, modi eligendi, assumenda ducimus voluptate blanditiis,
+				tenetur rerum culpa consequatur
+			</h4>
+			<h4>
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
+				culpa animi debitis impedit molestias omnis numquam, velit
+				fugiat labore tenetur sapiente pariatur
+			</h4>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+		</div>
+		<h4>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+			pariatur ducimus consectetur itaque architecto perferendis similique
+			dolor et, sint eius quam amet eligendi dolore a tempora dolorum
+			totam quae nesciunt!
+		</h4>
+
+		<h3>Selettore di figli diretti</h3>
+		<div id="diretti">
+			<h4>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+				quae, modi eligendi, assumenda ducimus voluptate blanditiis,
+				tenetur rerum culpa consequatur
+			</h4>
+			<div>
+				<h4>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+					Non culpa animi debitis impedit molestias omnis numquam,
+					velit fugiat labore tenetur sapiente pariatur
+				</h4>
+			</div>
+            <h4>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+				quae, modi eligendi, assumenda ducimus voluptate blanditiis,
+				tenetur rerum culpa consequatur
+			</h4>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+		</div>
+		<h4>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+			pariatur ducimus consectetur itaque architecto perferendis similique
+			dolor et, sint eius quam amet eligendi dolore a tempora dolorum
+			totam quae nesciunt!
+		</h4>
+
+        <h3>Selettore di fratelli adiacenti</h3>
+
+        <h4 id="adiacenti">Titoletto di prova</h4>
+        <h5>Contenuto</h5>
+        <p>Contenuto intermedio</p>
+        <h5>Altro contenuto</h5>
+
+        <h3>Selettore generale di fratelli</h3>
+
+        <h4 id="generali">Titoletto di prova</h4>
+        <h5>Contenuto</h5>
+        <h5>Secondo Contenuto</h5>
+        <p>Contenuto intermedio</p>
+        <h5>Altro contenuto</h5>
+        <div id="diretti">
+			<h4>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+				quae, modi eligendi, assumenda ducimus voluptate blanditiis,
+				tenetur rerum culpa consequatur
+			</h4>
+			<div>
+				<h4>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+					Non culpa animi debitis impedit molestias omnis numquam,
+					velit fugiat labore tenetur sapiente pariatur
+				</h4>
+			</div>
+            <h4>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+				quae, modi eligendi, assumenda ducimus voluptate blanditiis,
+				tenetur rerum culpa consequatur
+			</h4>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+		</div>
+		<h4>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+			pariatur ducimus consectetur itaque architecto perferendis similique
+			dolor et, sint eius quam amet eligendi dolore a tempora dolorum
+			totam quae nesciunt!
+		</h4>
+        <h5>Fratello di diretti</h5>
+
+        <hr />
+        <h3><a href="https://www.google.com" target="_blank">GOOGLE</a></h3>
+
+        <hr />
+        <ul id="primaRiga">
+            <li>TITOLO ELENCO</li>
+            <li>voce 1</li>
+            <li>voce 2</li>
+            <li>voce 3</li>
+            <li>voce 4</li>
+        </ul>
+
+		<hr />
+		<table>
+			<tr>
+				<td>CELLA 1</td>
+				<td>CELLA 2</td>
+				<td>CELLA 3</td>
+				<td>CELLA 4</td>
+				<td>CELLA 5</td>
+				<td>CELLA 6</td>
+			</tr>
+			<tr>
+				<td>CELLA 1</td>
+				<td>CELLA 2</td>
+				<td>CELLA 3</td>
+				<td>CELLA 4</td>
+				<td>CELLA 5</td>
+				<td>CELLA 6</td>
+			</tr>
+			<tr>
+				<td>CELLA 1</td>
+				<td>CELLA 2</td>
+				<td>CELLA 3</td>
+				<td>CELLA 4</td>
+				<td>CELLA 5</td>
+				<td>CELLA 6</td>
+			</tr>
+			<tr>
+				<td>CELLA 1</td>
+				<td>CELLA 2</td>
+				<td>CELLA 3</td>
+				<td>CELLA 4</td>
+				<td>CELLA 5</td>
+				<td>CELLA 6</td>
+			</tr>
+			<tr>
+				<td>CELLA 1</td>
+				<td>CELLA 2</td>
+				<td>CELLA 3</td>
+				<td>CELLA 4</td>
+				<td>CELLA 5</td>
+				<td>CELLA 6</td>
+			</tr>
+			<tr>
+				<td>CELLA 1</td>
+				<td>CELLA 2</td>
+				<td>CELLA 3</td>
+				<td>CELLA 4</td>
+				<td>CELLA 5</td>
+				<td>CELLA 6</td>
+			</tr>
+			<tr>
+				<td>CELLA 1</td>
+				<td>CELLA 2</td>
+				<td>CELLA 3</td>
+				<td>CELLA 4</td>
+				<td>CELLA 5</td>
+				<td>CELLA 6</td>
+			</tr>
+			<tr>
+				<td>CELLA 1</td>
+				<td>CELLA 2</td>
+				<td>CELLA 3</td>
+				<td>CELLA 4</td>
+				<td>CELLA 5</td>
+				<td>CELLA 6</td>
+			</tr>
+			<tr>
+				<td>CELLA 1</td>
+				<td>CELLA 2</td>
+				<td>CELLA 3</td>
+				<td>CELLA 4</td>
+				<td>CELLA 5</td>
+				<td>CELLA 6</td>
+			</tr>
+		</table>
+
+		<hr />
+		<ul id="elenco">
+			<li>Filippo Scarfò</li>
+			<li>A;essandro Pesole</li>
+			<li>Alice Bernardi</li>
+			<li>Barbara Fattizzo</li>
+			<li>Alice Zarattani</li>
+		</ul>
+
+		<hr />
+		<div id="elementi">
+			<h3>Racconto</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti dolore nihil vitae provident eligendi totam neque recusandae voluptatem quis itaque aut pariatur, reprehenderit ea dolor expedita iusto laboriosam molestiae.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam id ex doloribus accusantium sunt veritatis, aut hic, neque dolorum excepturi optio mollitia vitae totam ducimus omnis dolore perferendis placeat?</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti dolore nihil vitae provident eligendi totam neque recusandae voluptatem quis itaque aut pariatur, reprehenderit ea dolor expedita iusto laboriosam molestiae.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam id ex doloribus accusantium sunt veritatis, aut hic, neque dolorum excepturi optio mollitia vitae totam ducimus omnis dolore perferendis placeat?</p>
+		</div>
+	</body>
+</html>
