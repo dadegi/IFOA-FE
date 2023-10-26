@@ -94,3 +94,11 @@ table tr:nth-child(n + 2) {
 #elementi p:first-of-type {
     color: red;
 }
+
+input:focus {
+    background-color: aquamarine;
+}
+
+input:required {
+    border: 2px solid red;
+}
