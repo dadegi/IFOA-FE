@@ -32,23 +32,23 @@ numero = 5; // Non si deve usare let quando si riassegna una variabile perché s
 document.getElementById("secondoValore").innerHTML = numero;
 
 // Costanti
-const nome = 'Pippo';
+const nome = "Pippo";
 
-document.getElementById('costante').innerHTML = nome;
+document.getElementById("costante").innerHTML = nome;
 
 // Questa riassegnazione di costante genera un errore, perché il valore di una costante non può cambiare durante l'esecuzione dello script
 // nome = 'Pluto';
 
 // Tipizzazione
 let tipoDebole = 15;
-document.getElementById('tipoNumero').innerHTML = tipoDebole;
+document.getElementById("tipoNumero").innerHTML = tipoDebole;
 
-tipoDebole = 'Pippo';
-document.getElementById('tipoStringa').innerHTML = tipoDebole;
+tipoDebole = "Pippo";
+document.getElementById("tipoStringa").innerHTML = tipoDebole;
 
 // Operatore ternario
 let anni = 18;
 
-const ingresso = (anni < 18) ? 'Ingresso vietato' : 'ingresso permesso';
+const ingresso = anni < 18 ? "Ingresso vietato" : "ingresso permesso";
 
-document.getElementById('ternario').innerHTML = ingresso;
+document.getElementById("ternario").innerHTML = ingresso;
