@@ -113,45 +113,57 @@ let x1 = 27;
 let x2 = 12;
 let x3 = 45;
 
-if (x1 >= x2) {
-	if (x3 >= x1) {
-		document.getElementById('primo').innerHTML = x3;
-		document.getElementById('secondo').innerHTML = x1;
-		document.getElementById('terzo').innerHTML = x2;
-		console.log(x3, x1, x2);
-	} else {
-		if (x3 >= x2) {
-			document.getElementById('primo').innerHTML = x1;
-			document.getElementById('secondo').innerHTML = x3;
-			document.getElementById('terzo').innerHTML = x2;
-			console.log(x1, x3, x2);
-		} else {
-			document.getElementById('primo').innerHTML = x1;
-			document.getElementById('secondo').innerHTML = x2;
-			document.getElementById('terzo').innerHTML = x3;
-			console.log(x1, x2, x3);
-		}
-	}
-} else {
-	if (x3 >= x2) {
-		document.getElementById('primo').innerHTML = x3;
-		document.getElementById('secondo').innerHTML = x2;
-		document.getElementById('terzo').innerHTML = x1;
-		console.log(x3, x2, x1);
-	} else {
-		if (x3 >= x1) {
-			document.getElementById('primo').innerHTML = x2;
-			document.getElementById('secondo').innerHTML = x3;
-			document.getElementById('terzo').innerHTML = x1;
-			console.log(x2, x3, x1);
-		} else {
-			document.getElementById('primo').innerHTML = x2;
-			document.getElementById('secondo').innerHTML = x1;
-			document.getElementById('terzo').innerHTML = x3;
-			console.log(x2, x1, x3);
-		}
-	}
-}
+// if (x1 >= x2) {
+// 	if (x3 >= x1) {
+// 		document.getElementById('primo').innerHTML = x3;
+// 		document.getElementById('secondo').innerHTML = x1;
+// 		document.getElementById('terzo').innerHTML = x2;
+// 		console.log(x3, x1, x2);
+// 	} else {
+// 		if (x3 >= x2) {
+// 			document.getElementById('primo').innerHTML = x1;
+// 			document.getElementById('secondo').innerHTML = x3;
+// 			document.getElementById('terzo').innerHTML = x2;
+// 			console.log(x1, x3, x2);
+// 		} else {
+// 			document.getElementById('primo').innerHTML = x1;
+// 			document.getElementById('secondo').innerHTML = x2;
+// 			document.getElementById('terzo').innerHTML = x3;
+// 			console.log(x1, x2, x3);
+// 		}
+// 	}
+// } else {
+// 	if (x3 >= x2) {
+// 		document.getElementById('primo').innerHTML = x3;
+// 		document.getElementById('secondo').innerHTML = x2;
+// 		document.getElementById('terzo').innerHTML = x1;
+// 		console.log(x3, x2, x1);
+// 	} else {
+// 		if (x3 >= x1) {
+// 			document.getElementById('primo').innerHTML = x2;
+// 			document.getElementById('secondo').innerHTML = x3;
+// 			document.getElementById('terzo').innerHTML = x1;
+// 			console.log(x2, x3, x1);
+// 		} else {
+// 			document.getElementById('primo').innerHTML = x2;
+// 			document.getElementById('secondo').innerHTML = x1;
+// 			document.getElementById('terzo').innerHTML = x3;
+// 			console.log(x2, x1, x3);
+// 		}
+// 	}
+// }
+
+// Soluzione con array
+let arrayOrd = [x1, x2, x3];
+// arrayOrd[0] = x1;
+// arrayOrd[1] = x2;
+// arrayOrd[2] = x3;
+
+arrayOrd.sort();
+
+document.getElementById('primo').innerHTML = arrayOrd[2];
+document.getElementById('secondo').innerHTML = arrayOrd[1];
+document.getElementById('terzo').innerHTML = arrayOrd[0];
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca 'typeof').
