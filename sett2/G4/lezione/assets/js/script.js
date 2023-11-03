@@ -1,8 +1,6 @@
 let numero1;
 let numero2;
 let operazione;
-let nomeOperazione;
-let risultato;
 
 function eventHandler() {
 	numero1 = document.getElementById('numero1').value;
@@ -11,7 +9,6 @@ function eventHandler() {
 
 	if (controlla()) {
 		calcola();
-        scrivi();
         cancellaForm();
 	} else {
 		return;
@@ -31,6 +28,8 @@ function controlla() {
 }
 
 function calcola() {
+    let nomeOperazione;
+    let risultato;
 	switch (operazione) {
 		case '1':
             nomeOperazione = 'addizione';
@@ -49,9 +48,10 @@ function calcola() {
 			risultato = Number(numero1) / Number(numero2);
 			break;
 	}
+    scrivi(nomeOperazione, risultato);
 }
 
-function scrivi() {
+function scrivi(nomeOperazione, risultato) {
     document.getElementById('risultato').innerHTML = 'Il risultato della ' + nomeOperazione +  ' tra ' + numero1 + ' e ' + numero2 + ' è ' + risultato;
 }
 
