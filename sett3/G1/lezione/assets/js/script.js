@@ -56,3 +56,46 @@ const arraySomma = numeri1.map(function(el) {
 console.log(arraySomma);
 
 // NESSUNO DEI DUE METODI modifica l'array di partenza
+
+// Selezione elementi da checkbox, forEach, spread operator e memorizzazione valori
+let studente = {
+    nome: 'Mario',
+    cognome: 'Rossi',
+    materie: []
+}
+
+console.log(studente);
+
+let checkHtml = document.getElementById('HTML');
+let checkCss = document.getElementById('CSS');
+let checkJs = document.getElementById('JS');
+
+let scelti = [checkHtml, checkCss, checkJs]; // array di checkbox
+
+// sintassi arrow function
+const invia = () => {
+    let corsi = [];
+    document.getElementById('scelti').innerHTML = '';
+    scelti.forEach((checkbox) => {
+        if (checkbox.checked) {
+            corsi.push(checkbox.value);
+        }
+    });
+    document.getElementById('scelti').innerHTML = `Corsi scelti: ${corsi}`;
+    studente.materie.push(...corsi);
+    console.log(studente);
+}
+
+// sintassi dedclared function
+// function invia() {
+//     let corsi = [];
+//     document.getElementById('scelti').innerHTML = '';
+//     scelti.forEach((checkbox) => {
+//         if (checkbox.checked) {
+//             corsi.push(checkbox.value);
+//         }
+//     });
+//     document.getElementById('scelti').innerHTML = `Corsi scelti: ${corsi}`;
+//     studente.materie.push(...corsi);
+//     console.log(studente);
+// }
