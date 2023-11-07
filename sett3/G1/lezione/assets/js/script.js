@@ -99,3 +99,12 @@ const invia = () => {
 //     studente.materie.push(...corsi);
 //     console.log(studente);
 // }
+
+// METODO MAP
+let arrayNomi = ['Mario', 'Aldo', 'Anna', 'Nicola', 'Maria', 'Giovanni', 'Giulia'];
+
+const lunghezzaNomi = arrayNomi.map((el) => {
+    return el.charAt(0);
+});
+
+console.log(lunghezzaNomi);
