@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esercizio settimana 3 giorno 1</title>
-</head>
-<body>
-    
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Esercizio settimana 3 giorno 1</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div id="container">
+			<h1>Cerca film</h1>
+			<select id="imdbID"></select>
+			<button type="button" id="cerca" onclick="cerca()">CERCA</button>
+			<hr />
+			<div id="film">
+				<h2 id="titolo"></h2>
+				<h4 id="anno"></h4>
+				<img id="poster" />
+			</div>
+		</div>
 
-    <script src="D6.js"></script>
-</body>
+		<script src="D6.js"></script>
+	</body>
 </html>

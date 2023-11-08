@@ -288,14 +288,60 @@ console.log(titoli);
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 
+const millennio = (array) => {
+	return array.filter((film) => parseInt(film.Year) > 2000);
+}
+
+console.log('***Esercizio 12***');
+console.log(millennio(movies));
+
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+const sommaAnni = (array) => {
+	return array.reduce((valore, element) => valore + parseInt(element.Year), 0);
+}
+
+console.log('***Esercizio 13***');
+console.log(sommaAnni(movies));
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 
+const cercaFilm = (array, id) => {
+	return array.find((film) => film.imdbID === id);
+}
+
+console.log('***Esercizio 14***');
+console.log(cercaFilm(movies, 'tt4154756'));
+
+/* ESERCIZIO 14b: ricerca su selezione*/
+
+// Popolamento della combo con i titoli dei film e gli imdbID come value
+movies.forEach((film) => {
+	document.getElementById('imdbID').innerHTML += `<option value="${film.imdbID}">${film.Title} - Anno ${film.Year}</option>`;
+});
+
+function cerca() {
+	let imdbID = document.getElementById('imdbID').value; // recupero dell'imdbID scelto
+	mioFilm = movies.find((element) => element.imdbID === imdbID); // ricerca enll'array del film con l'imdbID scelto
+	document.getElementById('film').style.display = 'block'; // comparsa del div che contiene i dettagli dei film (nel CSS è display: none;)
+	// scrittura nell'html
+	document.getElementById('titolo').innerHTML = mioFilm.Title;
+	document.getElementById('anno').innerHTML = mioFilm.Year;
+	document.getElementById('poster').setAttribute('src', mioFilm.Poster); // settaggio dell'attributo src del tag img con l'immagine trovata nella base dati
+}
+
+
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+
+const cercaAnno = (array, anno) => {
+	return array.findIndex((element) => parseInt(element.Year) === anno);
+}
+
+console.log('***Esercizio 15***');
+console.log(cercaAnno(movies, 1978));
