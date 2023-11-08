@@ -320,6 +320,12 @@ console.log(cercaFilm(movies, 'tt4154756'));
 /* ESERCIZIO 14b: ricerca su selezione*/
 
 // Popolamento della combo con i titoli dei film e gli imdbID come value
+
+// Al caricamento della finestra assegno al div che conterrà il dettaglio film la classe hidden, definita in css, per non farlo apparire
+window.addEventListener('load', function() {
+	document.getElementById('film').className = 'hidden';
+});
+
 movies.forEach((film) => {
 	document.getElementById('imdbID').innerHTML += `<option value="${film.imdbID}">${film.Title} - Anno ${film.Year}</option>`;
 });
@@ -327,7 +333,10 @@ movies.forEach((film) => {
 function cerca() {
 	let imdbID = document.getElementById('imdbID').value; // recupero dell'imdbID scelto
 	mioFilm = movies.find((element) => element.imdbID === imdbID); // ricerca enll'array del film con l'imdbID scelto
-	document.getElementById('film').style.display = 'block'; // comparsa del div che contiene i dettagli dei film (nel CSS è display: none;)
+
+	// Quando si carica il film sostituisco la class hidden con la classe visibile (sistema alternativo rispetto a riga 339)
+	document.getElementById('film').className = 'visible';
+	// document.getElementById('film').style.display = 'block'; // comparsa del div che contiene i dettagli dei film (nel CSS è display: none;)
 	// scrittura nell'html
 	document.getElementById('titolo').innerHTML = mioFilm.Title;
 	document.getElementById('anno').innerHTML = mioFilm.Year;
