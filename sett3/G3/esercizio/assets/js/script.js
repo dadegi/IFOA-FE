@@ -23,7 +23,15 @@ const scriviLista = () => {
 	tasks.forEach((element, index) => {
 		let singletask = document.createElement('li');
         singletask.style.borderBottom = '1px solid gray';
-		singletask.innerHTML = `${element} <button class="button" onclick="elimina(${index})">❌</button>`;
+        singletask.innerHTML = `${element}`;
+
+        let pulsante = document.createElement('button');
+        pulsante.classList.add('button');
+        pulsante.innerHTML = '❌';
+        pulsante.setAttribute('onclick', `elimina(${index})`);
+
+        singletask.appendChild(pulsante);
+		// singletask.innerHTML = `${element} <button class="button" onclick="elimina(${index})">❌</button>`;
 		taskList.appendChild(singletask);
 	});
 	barraTask();
