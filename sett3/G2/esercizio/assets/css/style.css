@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+.sfondoVerde {
+	background-color: green;
+}
+
+.tabella {
+	width: 50vw;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+.tabella th, .tabella td {
+	border: 2px solid black;
+}
+
+body div,
+footer {
+	padding: 1rem;
+}
+
+footer {
+	padding: 1rem;
+	background-color: black;
+	color: white;
+}
+
+.myHeading {
+	color: #ff00d6;
+}
