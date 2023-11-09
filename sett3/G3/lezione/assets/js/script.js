@@ -87,22 +87,21 @@ let barra = document.getElementById('barra');
 
 const avviaTimer = () => {
 	let timer = 0;
-	barra.style.width = '0px';
-	document.getElementById('percentuale').innerText = '';
-    document.getElementById('stop').innerText = '';
-
-	setInterval(() => {
-		if (timer < 501) {
-			barra.style.width = `${timer}px`;
-			let percentuale = timer / 5;
-			document.getElementById('percentuale').innerText = `${percentuale}`;
-			timer++;
-		} else {
-			document.getElementById('stop').innerText =
-				'Progress Bar interrotta';
-			clearInterval(avviaTimer);
-		}
-	}, 10);
-};
+	if (timer === 0) {
+		timer = 1;
+		let progress = setInterval(() => {
+			if (timer >= 500) {
+				document.getElementById('stop').innerText = 'Progress bar completata!'
+				clearInterval(progress);
+			} else {
+				barra.style.width = `${timer}px`;
+				document.getElementById('stop').innerText = ''
+				timer++;
+				let percentuale = timer / 5;
+				document.getElementById('percentuale').innerText = `${percentuale}%`;
+			}
+		}, 10);
+	}
+}
 
 // avviaTimer();
