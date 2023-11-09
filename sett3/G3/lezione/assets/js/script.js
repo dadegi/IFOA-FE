@@ -1,7 +1,7 @@
 const btn = document.getElementById('invia');
 
 btn.addEventListener('click', function (e) {
-	e.preventDefault();
+	//e.preventDefault();
 	let form = document.querySelector('form');
 	let nome = document.getElementById('nome');
 	let cognome = document.getElementById('cognome');
@@ -48,23 +48,23 @@ btn.addEventListener('click', function (e) {
 
 let btnRigenera = document.getElementById('ricrea');
 function generaCodice() {
-    btnRigenera.setAttribute('disabled', 'true');
-    document.getElementById('rigenera').innerText = ''
-    document.getElementById('codice').style.textDecoration = 'none';
+	btnRigenera.setAttribute('disabled', 'true');
+	document.getElementById('rigenera').innerText = '';
+	document.getElementById('codice').style.textDecoration = 'none';
 
-    let codice = Math.floor(Math.random() * 100001);
-    if(codice < 100000) {
-        codice = codice + 100000;
-    }
-    document.getElementById('codice').innerText = codice;
-    scadenza();
+	let codice = Math.floor(Math.random() * 100001);
+	if (codice < 100000) {
+		codice = codice + 100000;
+	}
+	document.getElementById('codice').innerText = codice;
+	scadenza();
 }
 
-const scadenza = (() => {
-    setTimeout(() => {
-        rigenera();
-    }, 5000);
-});
+const scadenza = () => {
+	setTimeout(() => {
+		rigenera();
+	}, 5000);
+};
 
 // function scadenza() {
 //     setTimeout(() => {
@@ -73,35 +73,36 @@ const scadenza = (() => {
 // }
 
 function rigenera() {
-    document.getElementById('codice').style.textDecoration = 'line-through';
-    document.getElementById('rigenera').innerText = 'Codice scaduto, rigenerare!'
-    btnRigenera.removeAttribute('disabled');
+	document.getElementById('codice').style.textDecoration = 'line-through';
+	document.getElementById('rigenera').innerText =
+		'Codice scaduto, rigenerare!';
+	btnRigenera.removeAttribute('disabled');
 }
 
 generaCodice();
 
-// setTimeout
+// setInterval
 
 let barra = document.getElementById('barra');
 
-const avviaTimer = (() => {
-    let timer = 0;
-    barra.style.width = '0px';
-    document.getElementById('stop').innerText = '';
-    document.getElementById('percentuale').innerText = '';
+const avviaTimer = () => {
+	let timer = 0;
+	barra.style.width = '0px';
+	document.getElementById('percentuale').innerText = '';
     document.getElementById('stop').innerText = '';
 
-    setInterval(() => {
-        if (timer < 501) {
-            barra.style.width = `${timer}px`;
-            let percentuale = timer / 5;
-            document.getElementById('percentuale').innerText = `${percentuale}`
-            timer++;
-        } else {
-            document.getElementById('stop').innerText = 'Progress Bar interrotta';
-            clearInterval(avviaTimer);
-        }
-    }, 10);
-});
+	setInterval(() => {
+		if (timer < 501) {
+			barra.style.width = `${timer}px`;
+			let percentuale = timer / 5;
+			document.getElementById('percentuale').innerText = `${percentuale}`;
+			timer++;
+		} else {
+			document.getElementById('stop').innerText =
+				'Progress Bar interrotta';
+			clearInterval(avviaTimer);
+		}
+	}, 10);
+};
 
 // avviaTimer();
