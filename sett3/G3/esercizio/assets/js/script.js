@@ -22,7 +22,7 @@ const scriviLista = () => {
 	taskList.innerHTML = '';
 	tasks.forEach((element, index) => {
 		let singletask = document.createElement('li');
-        singletask.style.borderBottom = '1px solid gray'
+        singletask.style.borderBottom = '1px solid gray';
 		singletask.innerHTML = `${element} <button class="button" onclick="elimina(${index})">❌</button>`;
 		taskList.appendChild(singletask);
 	});
@@ -40,7 +40,6 @@ function elimina(index) {
 
 function barraTask() {
 	const elencoTask = document.querySelectorAll('li');
-	// console.log(elencoTask);
 	elencoTask.forEach((element) => {
 		element.onclick = function () {
 			element.classList.toggle('barrato');
