@@ -111,3 +111,30 @@ input::placeholder {
     background-color: #7a408a;
     border-radius: 50%;
 }
+
+#newMeetingName {
+    width: 200px;
+}
+
+form button {
+    cursor: pointer;
+    background-color: #7a408a;
+    color: #ebebeb;
+    border: none;
+    min-height: 55px;
+    font-weight: 700;
+    width: 80px;
+    border-radius: 10px;
+}
+
+#appointments {
+    display: none;
+}
+
+#appointments ul {
+    padding-inline-start: 16px;
+}
+
+#appointments ul li {
+    min-height: 30px;
+}
