@@ -11,21 +11,9 @@ Creeremo quindi un array di array, dove l'array padre è il mese e gli array fig
 
 Es. oggi è il 10 novembre: l'array padre rappresenta novembre, gli array figli rappresentano i trenta giorno
 [
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
+    
     ['09:00 - live coding calendario', '14:00 - esercizio quotidiano: tombola', '18:00 - aperitivo],
-    [],
-    [],
-    [],
-    [],
-    ...
+    
 ]
 
 Non sapendo quanti giorni ci sono nel mese in corso, si crea il "guscio" del mese
@@ -74,8 +62,6 @@ const giorniTotali = function () {
 	return numeroGiorni; // numeroGiorni è il numero di volte per cui dovrò ripetere la creazione dei div corrispondenti ai singoli giorni
 };
 
-giorniTotali();
-
 // Quando carico un mese, eventuali classi selected precedenti devono essere rimosse, altrimenti mi troverò selezionati i giorni del mese precedente che avevno degli appuntamenti
 
 // Seleziono TUTTI gli elementi con classe selected e rimuovo la classe
@@ -89,10 +75,92 @@ const deselezionaCelle = function () {
 
 // Quando faccio click su un giorno, nel div id="newMeetingDay" dovrò leggere la data selezionata
 
-const giornoAppuntamento = function(indiceGiorno) {
-    const giorno = document.getElementById('newMeetingDay');
-    giorno.classList.add('hasDay');
-    giorno.innerText = indiceGiorno + 1;
-}
+const giornoAppuntamento = function (indiceGiorno) {
+	const giorno = document.getElementById('newMeetingDay');
+	giorno.classList.add('hasDay');
+	giorno.innerText = indiceGiorno + 1;
+};
 
 // A questo punto va creata la "griglia" dei div contenenti i giorni del mese in corso; questa griglie userà il numero di giorni per gestire l'array globale creato all'inizio e scriverà i vari div
+
+const creaGriglia = function (numeroGiorni) {
+	// numeroGiorni è il numero di giorni del mese corrente
+	const calendarDiv = document.getElementById('calendar');
+
+	for (let i = 0; i < numeroGiorni; i++) {
+		const cellaGiorno = document.createElement('div'); // ad ogni giorno associo un div
+		cellaGiorno.classList.add('day'); // stilizzo il div come definito in css
+
+		cellaGiorno.addEventListener('click', function (e) {
+			// rendo cliccabili i div dei giorni
+			deselezionaCelle(); // deseleziono l'eventuale altra cella selezionata
+			cellaGiorno.classList.add('selected'); // aggiungo la classe css per mostrare la selezione del giorno cliccato
+			giornoAppuntamento(i); // scrivo il giorno cliccato nella sezione Giorno del form
+			// Se ci sono già eventi nella giornata, devo far comparire la lista
+			if (appointments[i].length > 0) {
+				mostraAppuntamenti(i);
+			} else {
+				const divAppuntamenti = document.getElementById('appointments');
+				divAppuntamenti.style.display = 'none';
+			}
+		});
+		// devo scrivere il numero del giorno nei div
+		const valoreCella = document.createElement('h3');
+		valoreCella.innerText = i + 1;
+		// "appendo" gli elementi creati
+		cellaGiorno.appendChild(valoreCella);
+		calendarDiv.appendChild(cellaGiorno);
+
+		// creato il calendario, inserisco nell'array appointments l'array dei giorni del mese
+		appointments.push([]);
+	}
+};
+
+creaGriglia(giorniTotali());
+
+const mostraAppuntamenti = function (indiceGiorno) {
+	// Con questa funzione si popopla la lista degli appuntamenti con gli appuntamenti del giorno
+
+	// 1- prendere gli appuntamenti giusti
+	const appuntamentiGiorno = appointments[indiceGiorno];
+	// 2- selezionare la lista contenitore
+	const lista = document.querySelector('#appointments ul');
+	// 3- svuotare la lista
+	lista.innerHTML = '';
+
+	// 4- ciclare gli appuntamenti del giorno e creare un li per ciascuno di essi
+	appuntamentiGiorno.forEach((element) => {
+		const newLi = document.createElement('li');
+		newLi.innerText = element;
+		lista.appendChild(newLi);
+	});
+	// 5- la lsita è piena ma è ancora nascosta
+	const divAppuntamenti = document.getElementById('appointments');
+	divAppuntamenti.style.display = 'block';
+};
+
+const meetingForm = document.querySelector('form');
+meetingForm.addEventListener('submit', function(e) {
+	e.preventDefault();
+	// 1- giorno dell'appuntamento
+	const selectedDay = document.getElementById('newMeetingDay').innerText;
+	// 2- ora dell'appuntamento selezionato
+	const meetingTime = document.getElementById('newMeetingTime').value;
+	// 3- nome dell'appuntamento
+	const meetingName = document.getElementById('newMeetingName').value;
+	// 4- creo la stringa dell'appuntamento
+	const stringaAppuntamento = `${meetingTime} - ${meetingName}`;
+	// 5- scrivo l'appuntamento nell'array
+	const indiceArray = parseInt(selectedDay) - 1;
+	appointments[indiceArray].push(stringaAppuntamento);
+
+	// creo un pallino che evidenzi nel calendario la presenza di un appuntamento
+	const pallino = document.createElement('div');
+	pallino.classList.add('pallino');
+	// cerco il div del giorno selezionato
+	const divSelezionato = document.querySelector('.selected');
+	if (!divSelezionato.querySelector('.pallino')) {
+		divSelezionato.appendChild(pallino);
+	}
+	mostraAppuntamenti(indiceArray);
+});
